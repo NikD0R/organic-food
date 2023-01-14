@@ -1,0 +1,271 @@
+@import 'vars';
+@import 'fonts';
+@import 'reset';
+@import 'global';
+
+.header {
+  padding: 65px 0 60px;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.menu {
+  &__list {
+    display: flex;
+  }
+
+  &__list-item + .menu__list-item {
+    padding-left: 40px;
+  }
+
+  &__list-link {
+    line-height: 24px;
+    transition: all .3s;
+  }
+
+  &__list-link:hover {
+    color: #09A66D;
+  }
+}
+
+.user-nav {
+  display: flex;
+  align-items: center;
+
+  &__link {
+    background-color: $bg;
+    padding: 10px;
+    border-radius: 50%;
+  }
+
+  &__link--cart {
+    margin-left: 30px;
+    margin-right: 42px;
+    position: relative;
+  }
+
+  &__num {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: #09A66D;
+    top: 0px;
+    right: 0px;
+    font-size: 10px;
+    line-height: 20px;
+    @extend %dmsans-400;
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+  }
+
+  &__link-btn {
+    background-color: #09A66D;
+    border-radius: 8px;
+    padding: 10px 23px;
+    color: #fff;
+    line-height: 20px;
+  }
+}
+
+.footer {
+  background-color: #FCFEFD;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e1f7ef;
+  padding: 70px 0 75px;
+
+  &__descr {
+    width: 350px;
+    margin-right: 60px;
+  }
+
+  &__logo {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    line-height: 30px;
+  }
+
+  &__nav,
+  &__resources {
+    width: 130px;
+    margin-right: 50px;
+  }
+
+  &__title {
+    color: $title;
+    font-size: 24px;
+    line-height: 32px;
+    @extend %dmsans-500;
+    margin-bottom: 40px;
+    padding-top: 40px;
+  }
+
+  &__list-link {
+    display: block;
+    margin-bottom: 25px;
+    transition: all .3s;
+    line-height: 24px;
+  }
+
+  &__list-link:hover {
+    color: #09A66D;
+  }
+
+  &__email {
+    display: block;
+    margin-bottom: 27px;
+    line-height: 24px;
+  }
+
+  &__social-list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__social-item + .footer-top__social-item {
+    padding-left: 56px;
+  }
+
+  &__social-link {
+    transition: all .5s;
+
+    path {
+      fill: $default;
+    }
+
+    &:hover {
+      path {
+        fill: #09A66D;
+      }
+    }
+  }
+}
+
+.footer-bottom {
+  padding: 50px 0;
+  text-align: center;
+
+  &__text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.products {
+  background-color: $bg;
+  background-image: url('../images/decor/leaves.png');
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: top left;
+  text-align: center;
+  padding: 93px 0 33px;
+
+  &__text {
+    max-width: 640px;
+    display: block;
+    line-height: 30px;
+    margin: 0 auto 57px;
+  }
+
+  &__link {
+    @extend %dmsans-500;
+    text-align: center;
+    position: relative;
+    transition: all .3s;
+    &:hover {
+      color: #09A66D;
+      &::after {
+        background-image: url('../images/icons/hover-arrow.png');
+        width: 65px;
+        height: 65px;
+        top: -21px;
+        right: -83px;
+      }
+    }
+  }
+
+  &__link::after {
+    content: '';
+    position: absolute;
+    width: 33px;
+    height: 16px;
+    top: 5px;
+    right: -65px;
+    background-image: url('../images/icons/arrow.png');
+    background-repeat: no-repeat;
+    transition: all .3s;
+  }
+
+  &__img {
+    display: block;
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+}
+
+.info {
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    padding: 55px 0 45px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 56px;
+      height: 56px;
+      top: 65px;
+      right: 115px;
+    }
+  }
+
+  &__item--user::before {
+    background-image: url('../images/icons/user.png');
+    background-repeat: no-repeat;
+    right: 113px;
+  }
+
+  &__item--review::before {
+    background-image: url('../images/icons/star.png');
+    background-repeat: no-repeat;
+    right: 125px;
+  }
+
+  &__item--items::before {
+    background-image: url('../images/icons/product.png');
+    background-repeat: no-repeat;
+  }
+
+  &__item-num {
+    color: #000;
+    font-size: 48px;
+    line-height: 48px;
+    margin-bottom: 4px;
+    padding-left: 15px;
+  }
+
+  &__item-text {
+    color: #000;
+    line-height: 30px;
+    padding-left: 18px;
+  }
+
+}
+
+@import 'media';
