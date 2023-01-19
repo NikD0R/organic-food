@@ -1,12 +1,25 @@
 $(function(){
 
+  $('.menu__btn').on('click', function() {
+    $('.menu__list').toggleClass('menu__list--active');
+  });
+
   $(".slider__inner").slick({
     dots: false,
     fade: true,
+    draggable: false,
     autoplay: true,
     autoplaySpeed: 2000,
     prevArrow: '<button type="button" class="slick-prev"><img src="images/icons/arrow-left.png" alt="left arrow"></button>',
     nextArrow: '<button type="button" class="slick-next"><img src="images/icons/arrow-right.png" alt="right arrow"></button>',
+    responsive: [
+      {
+        breakpoint: 1040,
+        settings: {
+          draggable: true,
+        }
+      }
+    ]
   });
 
   $(".star").rateYo({
